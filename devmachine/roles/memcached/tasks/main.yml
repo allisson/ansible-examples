@@ -1,0 +1,11 @@
+---
+- name: Install Memcached package
+  apt: name=memcached state=present
+
+- name: Update Memcached config
+  copy: src=memcached.conf dest=/etc/memcached.conf
+  notify: 
+    - restart memcached
+
+- name: Start Memcached Service
+  service: name=memcached state=started enabled=true

@@ -1,0 +1,35 @@
+---
+- name: Update source.list
+  copy: src=source.list dest=/etc/apt/source.list
+
+- name: Update packages
+  apt: update_cache=yes cache_valid_time=3600 upgrade=dist
+
+- name: Install core packages
+  apt: name={{ item }} state=present
+  with_items:
+    - build-essential
+    - vim
+    - git-core
+
+- name: Install python tools
+  apt: name={{ item }} state=present
+  with_items:
+    - python-dev
+    - virtualenvwrapper
+    - python-mysqldb
+    - python-psycopg2
+    - python-pymongo
+
+- name: Install pillow deps
+  apt: name={{ item }} state=present
+  with_items:
+    - libtiff4-dev
+    - libjpeg8-dev
+    - zlib1g-dev
+    - libfreetype6-dev
+    - liblcms2-dev
+    - libwebp-dev
+    - tcl8.5-dev
+    - tk8.5-dev
+    - python-tk

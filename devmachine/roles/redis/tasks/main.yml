@@ -1,0 +1,11 @@
+---
+- name: Install Redis package
+  apt: name=redis-server state=present
+
+- name: Update Redis config
+  copy: src=redis.conf dest=/etc/redis/redis.conf
+  notify: 
+    - restart redis
+
+- name: Start Redis Service
+  service: name=redis-server state=started enabled=true

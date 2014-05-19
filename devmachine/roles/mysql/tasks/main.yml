@@ -1,0 +1,17 @@
+---
+- name: Install mysql packages
+  apt: name={{ item }} state=present
+  with_items:
+    - mysql-server
+    - libmysqlclient-dev
+
+- name: Update Mysql config
+  copy: src=my.cnf dest=/etc/mysql/my.cnf
+  notify: 
+    - restart mysql
+
+- name: Start Mysql Service
+  service: name=mysql state=started enabled=true
+
+- name: Create mysql user
+  mysql_user: name=allisson password=allisson priv=*.*:ALL,GRANT host=% state=present

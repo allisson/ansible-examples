@@ -1,0 +1,20 @@
+---
+- name: Import mongodb apt key
+  apt_key: url=http://docs.mongodb.org/10gen-gpg-key.asc state=present
+
+- name: Add Mongodb.org apt repo 
+  apt_repository: repo='deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' state=present
+
+- name: Update package list
+  apt: update_cache=yes
+
+- name: Install Mongodb
+  apt: name=mongodb-org state=present
+
+- name: Update Mongodb config
+  copy: src=mongod.conf dest=/etc/mongod.conf
+  notify: 
+    - restart mongodb
+
+- name: Start Mongodb Service
+  service: name=mongod state=started enabled=true

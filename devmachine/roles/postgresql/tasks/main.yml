@@ -1,0 +1,30 @@
+---
+- name: Import postgresql.org apt key
+  apt_key: url=https://www.postgresql.org/media/keys/ACCC4CF8.asc state=present
+
+- name: Add postgresql.org apt repo 
+  apt_repository: repo='deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' state=present
+
+- name: Update package list
+  apt: update_cache=yes
+
+- name: Install postgresql
+  apt: name={{ item }} state=present
+  with_items:
+    - postgresql-9.3-postgis-2.1
+    - libpq-dev
+
+- name: Start Postgresql Service
+  service: name=postgresql state=started enabled=true
+
+- name: Create postgresql user
+  sudo_user: postgres
+  postgresql_user: name=allisson password=allisson role_attr_flags=SUPERUSER
+
+- name: Update postgresql config
+  copy: src={{ item }} dest=/etc/postgresql/9.3/main/{{ item }}
+  with_items:
+    - postgresql.conf
+    - pg_hba.conf
+  notify: 
+    - restart postgresql
