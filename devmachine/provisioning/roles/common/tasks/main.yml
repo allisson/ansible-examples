@@ -20,6 +20,7 @@
     - python-mysqldb
     - python-psycopg2
     - python-pymongo
+    - fabric
 
 - name: Install pillow deps
   apt: name={{ item }} state=present
