@@ -1,0 +1,12 @@
+---
+- name: Import docker apt key
+  apt_key: url=https://get.docker.io/gpg state=present
+
+- name: Add docker repo 
+  apt_repository: repo='deb https://get.docker.io/ubuntu docker main main' state=present
+
+- name: Update package list
+  apt: update_cache=yes
+
+- name: Install docker
+  apt: name=lxc-docker state=present

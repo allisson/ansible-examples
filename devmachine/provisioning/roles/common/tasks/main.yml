@@ -13,6 +13,7 @@
     - git-core
     - nfs-common
     - portmap
+    - apt-transport-https
 
 - name: Install python tools
   apt: name={{ item }} state=present

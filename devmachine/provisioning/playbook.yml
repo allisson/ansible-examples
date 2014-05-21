@@ -1,5 +1,5 @@
 ---
-- name: Install Mysql 5.5, Postgresql 9.3 + Postgis, Mongodb, Redis, Memcached, Python Tools.
+- name: Install Mysql 5.5, Postgresql 9.3 + Postgis, Mongodb, Redis, Memcached, Python Tools, Docker.
   hosts: default
   user: vagrant
   sudo: yes
@@ -12,3 +12,4 @@
     - mongodb
     - redis
     - memcached
+    - docker
