@@ -1,5 +1,5 @@
 ---
-- name: Install Mysql 5.5, Postgresql 9.3 + Postgis, Mongodb, Redis, Memcached, Python Tools, Docker.
+- name: My dev machine setup
   hosts: default
   user: vagrant
   sudo: yes
@@ -13,3 +13,4 @@
     - redis
     - memcached
     - docker
+    - elasticsearch
