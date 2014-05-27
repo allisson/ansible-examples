@@ -13,4 +13,6 @@
     - redis
     - memcached
     - docker
+    - python
+    - ruby
     - elasticsearch
