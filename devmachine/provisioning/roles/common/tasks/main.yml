@@ -11,8 +11,6 @@
     - build-essential
     - vim
     - git-core
-    - nfs-common
-    - portmap
     - apt-transport-https
     - default-jre
 

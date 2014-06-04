@@ -10,3 +10,8 @@
 
 - name: Install docker
   apt: name=lxc-docker state=present
+
+- name: Update docker config
+  copy: src=docker dest=/etc/default/docker
+  notify: 
+    - restart docker
