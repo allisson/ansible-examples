@@ -11,6 +11,8 @@
     - build-essential
     - vim
     - git-core
+    - subversion
+    - mercurial
     - apt-transport-https
     - default-jre
 
@@ -19,9 +21,6 @@
   with_items:
     - python-dev
     - virtualenvwrapper
-    - python-mysqldb
-    - python-psycopg2
-    - python-pymongo
     - fabric
 
 - name: Install pillow deps

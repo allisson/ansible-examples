@@ -4,6 +4,7 @@
   with_items:
     - mysql-server
     - libmysqlclient-dev
+    - python-mysqldb
 
 - name: Update Mysql config
   copy: src=my.cnf dest=/etc/mysql/my.cnf

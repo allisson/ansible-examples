@@ -3,11 +3,11 @@
 #############################################################
 
 ###### Ubuntu Main Repos
-deb http://br.archive.ubuntu.com/ubuntu/ precise main restricted universe multiverse 
-deb-src http://br.archive.ubuntu.com/ubuntu/ precise main restricted universe multiverse 
+deb http://br.archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse 
+deb-src http://br.archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse 
 
 ###### Ubuntu Update Repos
-deb http://br.archive.ubuntu.com/ubuntu/ precise-security main restricted universe multiverse 
-deb http://br.archive.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse 
-deb-src http://br.archive.ubuntu.com/ubuntu/ precise-security main restricted universe multiverse 
-deb-src http://br.archive.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse 
+deb http://br.archive.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse 
+deb http://br.archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse 
+deb-src http://br.archive.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse 
+deb-src http://br.archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse 

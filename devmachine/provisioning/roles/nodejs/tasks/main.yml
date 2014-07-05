@@ -7,6 +7,3 @@
 
 - name: Install nodejs package
   apt: name=nodejs state=present
-
-- name: Install grunt package globally.
-  npm: name=grunt-cli global=yes state=present

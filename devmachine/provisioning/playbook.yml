@@ -6,13 +6,13 @@
 
   roles:
     - common
-    - mysql 
-    - postgresql
-    - nodejs
-    - mongodb
-    - redis
-    - memcached
     - docker
-    - python
-    - ruby
     - elasticsearch
+    - memcached
+    - mongodb
+    - mysql
+    - nodejs
+    - postgresql
+    - python
+    - redis
+    - ruby

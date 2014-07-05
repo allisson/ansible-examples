@@ -8,14 +8,9 @@
 - name: Install ruby versions
   apt: name={{ item }} state=present
   with_items:
-    - ruby
-    - ruby-dev
-    - rubygems
-    - ruby-switch
     - ruby1.9.1
     - ruby1.9.1-dev
+    - ruby2.0
+    - ruby2.0-dev
     - ruby2.1
     - ruby2.1-dev
-
-- name: Make ruby2.1 default
-  command: ruby-switch --set ruby2.1
