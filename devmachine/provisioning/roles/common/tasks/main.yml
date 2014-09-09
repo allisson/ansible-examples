@@ -16,6 +16,16 @@
     - apt-transport-https
     - default-jre
 
+- name: Install nfs support
+  apt: name={{ item }} state=present
+  with_items:
+    - nfs-common
+    - portmap
+    - cachefilesd
+
+- name: Update cachefilesd config
+  copy: src=cachefilesd dest=/etc/default/cachefilesd
+
 - name: Install python tools
   apt: name={{ item }} state=present
   with_items:
