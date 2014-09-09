@@ -32,6 +32,7 @@
     - python-dev
     - virtualenvwrapper
     - fabric
+    - python-tox
 
 - name: Install pillow deps
   apt: name={{ item }} state=present
