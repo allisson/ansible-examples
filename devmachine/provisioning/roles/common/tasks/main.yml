@@ -25,6 +25,8 @@
 
 - name: Update cachefilesd config
   copy: src=cachefilesd dest=/etc/default/cachefilesd
+  notify: 
+    - restart cachefilesd
 
 - name: Install python tools
   apt: name={{ item }} state=present
