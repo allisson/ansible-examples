@@ -4,3 +4,8 @@
 
 - name: Start Nginx Service
   service: name=nginx state=started enabled=true
+
+- name: Update nginx default config
+  copy: src=default dest=/etc/nginx/sites-available/default
+  notify: 
+    - restart nginx
