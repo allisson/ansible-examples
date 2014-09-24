@@ -16,12 +16,6 @@
     - apt-transport-https
     - default-jre
 
-- name: Install cachefilesd
-  apt: name=cachefilesd state=present
-
-- name: Update cachefilesd config
-  copy: src=cachefilesd dest=/etc/default/cachefilesd
-
 - name: Install python tools
   apt: name={{ item }} state=present
   with_items:
