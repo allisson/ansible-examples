@@ -36,3 +36,9 @@
     - tcl8.5-dev
     - tk8.5-dev
     - python-tk
+
+- name: Remove chef and puppet
+  apt: name={{ item }} state=absent
+  with_items:
+    - chef
+    - puppet
