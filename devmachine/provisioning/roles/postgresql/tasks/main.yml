@@ -11,12 +11,12 @@
 
 - name: Create postgresql user
   sudo_user: postgres
-  postgresql_user: name=allisson password=allisson role_attr_flags=SUPERUSER
+  postgresql_user: name=devmachine password=devmachine role_attr_flags=SUPERUSER
 
 - name: Update postgresql config
   copy: src={{ item }} dest=/etc/postgresql/9.3/main/{{ item }}
   with_items:
     - postgresql.conf
     - pg_hba.conf
-  notify: 
+  notify:
     - restart postgresql
