@@ -38,7 +38,8 @@
     - python-tk
 
 - name: Remove chef and puppet
-  apt: name={{ item }} state=absent
+  apt: name={{ item }} state=absent purge=yes
   with_items:
     - chef
     - puppet
+    - puppet-common
