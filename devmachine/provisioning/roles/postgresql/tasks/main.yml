@@ -17,6 +17,5 @@
   copy: src={{ item }} dest=/etc/postgresql/9.3/main/{{ item }}
   with_items:
     - postgresql.conf
-    - pg_hba.conf
   notify:
     - restart postgresql
